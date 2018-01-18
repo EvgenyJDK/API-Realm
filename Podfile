@@ -5,10 +5,9 @@ inhibit_all_warnings!
 
 target 'AnimationApp' do
     
-#    pod 'RealmSwift'
-#    pod 'Alamofire'
-#    pod 'AlamofireObjectMapper', '~> 4.0'
-    
-end
+    pod 'RealmSwift'
+    pod 'Alamofire'
+    pod 'AlamofireObjectMapper', '~> 5.0'
 
+end
 
