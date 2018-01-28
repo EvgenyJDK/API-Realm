@@ -8,6 +8,10 @@ target 'AnimationApp' do
     pod 'RealmSwift'
     pod 'Alamofire'
     pod 'AlamofireObjectMapper', '~> 5.0'
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'RxDataSources'
+    pod 'SwiftyJSON'
 
 end
 

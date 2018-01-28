@@ -14,6 +14,8 @@ class MainViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private let giphyListViewModel = GiphyListViewModel()
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.title = "GIPHY"
     }
@@ -21,10 +23,15 @@ class MainViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurateCollection()
+        load()
     }
 
     private func configurateCollection() {
         collectionView.register(UINib(nibName: GiphyCell.classIdentifier, bundle: nil), forCellWithReuseIdentifier: String(describing: GiphyCell.self))
+    }
+    
+    private func load() {
+        giphyListViewModel.load()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

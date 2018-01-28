@@ -8,10 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		87001F5D9C4B00CCAE03184F /* Pods_AnimationApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC77EB639702127227638616 /* Pods_AnimationApp.framework */; };
+		CE4B21B9201CA58300530FA1 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B21B8201CA58300530FA1 /* Meta.swift */; };
 		CE5B25E520171A380054C2FD /* GiphyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5B25E420171A380054C2FD /* GiphyCell.xib */; };
 		CE5B25E720171A500054C2FD /* GiphyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25E620171A500054C2FD /* GiphyCell.swift */; };
 		CE5B25EA201785400054C2FD /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25E9201785400054C2FD /* String+extensions.swift */; };
 		CE5B25ED201785750054C2FD /* UICollectionViewCell+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25EC201785750054C2FD /* UICollectionViewCell+extensions.swift */; };
+		CE5B25F120178C210054C2FD /* GiphyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25F020178C210054C2FD /* GiphyListViewModel.swift */; };
+		CE5B25F320178CC60054C2FD /* GiphyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25F220178CC60054C2FD /* GiphyList.swift */; };
+		CE5B25F52017A24C0054C2FD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25F42017A24C0054C2FD /* API.swift */; };
+		CE5B25F72017A3FC0054C2FD /* API.Giphy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25F62017A3FC0054C2FD /* API.Giphy.swift */; };
+		CE5B25FE201C970A0054C2FD /* Giphy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25FD201C970A0054C2FD /* Giphy.swift */; };
 		CE87812A201136190063F070 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE878129201136190063F070 /* AppDelegate.swift */; };
 		CE87812C201136190063F070 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87812B201136190063F070 /* MainViewController.swift */; };
 		CE87812F201136190063F070 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE87812D201136190063F070 /* Main.storyboard */; };
@@ -21,10 +27,16 @@
 
 /* Begin PBXFileReference section */
 		3C234D3815C7D2656F31B41E /* Pods-AnimationApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnimationApp/Pods-AnimationApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CE4B21B8201CA58300530FA1 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		CE5B25E420171A380054C2FD /* GiphyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GiphyCell.xib; sourceTree = "<group>"; };
 		CE5B25E620171A500054C2FD /* GiphyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyCell.swift; sourceTree = "<group>"; };
 		CE5B25E9201785400054C2FD /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
 		CE5B25EC201785750054C2FD /* UICollectionViewCell+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+extensions.swift"; sourceTree = "<group>"; };
+		CE5B25F020178C210054C2FD /* GiphyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyListViewModel.swift; sourceTree = "<group>"; };
+		CE5B25F220178CC60054C2FD /* GiphyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyList.swift; sourceTree = "<group>"; };
+		CE5B25F42017A24C0054C2FD /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		CE5B25F62017A3FC0054C2FD /* API.Giphy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.Giphy.swift; sourceTree = "<group>"; };
+		CE5B25FD201C970A0054C2FD /* Giphy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Giphy.swift; sourceTree = "<group>"; };
 		CE878126201136190063F070 /* AnimationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE878129201136190063F070 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE87812B201136190063F070 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				CE8781402011385E0063F070 /* Realm */,
+				CE5B25F220178CC60054C2FD /* GiphyList.swift */,
+				CE4B21B8201CA58300530FA1 /* Meta.swift */,
+				CE5B25FD201C970A0054C2FD /* Giphy.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -153,6 +168,8 @@
 		CE87813F201138250063F070 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				CE5B25F42017A24C0054C2FD /* API.swift */,
+				CE5B25F62017A3FC0054C2FD /* API.Giphy.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -200,6 +217,7 @@
 		CE87814520113AFC0063F070 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CE5B25F020178C210054C2FD /* GiphyListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -324,17 +342,27 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-AnimationApp/Pods-AnimationApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -367,10 +395,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5B25ED201785750054C2FD /* UICollectionViewCell+extensions.swift in Sources */,
+				CE5B25F320178CC60054C2FD /* GiphyList.swift in Sources */,
 				CE5B25EA201785400054C2FD /* String+extensions.swift in Sources */,
+				CE5B25F120178C210054C2FD /* GiphyListViewModel.swift in Sources */,
+				CE4B21B9201CA58300530FA1 /* Meta.swift in Sources */,
 				CE87812C201136190063F070 /* MainViewController.swift in Sources */,
 				CE87812A201136190063F070 /* AppDelegate.swift in Sources */,
+				CE5B25F72017A3FC0054C2FD /* API.Giphy.swift in Sources */,
+				CE5B25F52017A24C0054C2FD /* API.swift in Sources */,
 				CE5B25E720171A500054C2FD /* GiphyCell.swift in Sources */,
+				CE5B25FE201C970A0054C2FD /* Giphy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
