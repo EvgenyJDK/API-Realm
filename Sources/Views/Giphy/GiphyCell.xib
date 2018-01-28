@@ -41,6 +41,7 @@
             <viewLayoutGuide key="safeArea" id="MP6-1T-k3d"/>
             <connections>
                 <outlet property="gifImageView" destination="LFI-Lh-AiM" id="Qqg-1M-IRf"/>
+                <outlet property="idLabel" destination="OoO-eP-W8E" id="hWV-Js-mxl"/>
             </connections>
             <point key="canvasLocation" x="-77" y="-229"/>
         </collectionViewCell>

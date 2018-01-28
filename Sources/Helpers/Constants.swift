@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+enum Constatnts {
+    
+    enum UI {
+        static let countItemInSection = 3
+    }
+    
+}

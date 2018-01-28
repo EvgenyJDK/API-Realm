@@ -1,5 +1,5 @@
 //
-//  Array+extension.swift
+//  Array+extensions.swift
 //  AnimationApp
 //
 //  Created by Administrator on 28.01.2018.
