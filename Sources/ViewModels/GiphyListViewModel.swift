@@ -21,9 +21,11 @@ class GiphyListViewModel {
 
     }
     
-    func load() {
+    func load(search: String, online: Bool) {
+        if online { loadList(search: search) }
+        else { loadListFromStore() }
 //        loadGiphyList(searchText: "funny+cat")
-        loadList(search: "funny+cat")
+//        loadList(search: "funny+cat")
     }
     
     private func loadGiphyList(searchText: String) {
@@ -53,10 +55,16 @@ class GiphyListViewModel {
                     print(giphy.id ?? 0)
                     print(giphy.original ?? "")
                     print(giphy.preview ?? "")
+                    StoreService.shared.store(giphy: giphy)
                     self?.giphyList.value.append(giphy)
                 })
             }
             self?.successHandler(self?.giphyList.value ?? [])
         }
-    }    
+    }
+    
+    private func loadListFromStore() {
+        giphyList.value = StoreService.shared.fetch()
+        self.successHandler(self.giphyList.value)
+    }
 }

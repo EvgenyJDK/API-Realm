@@ -11,6 +11,7 @@
 		CE1EF50F201E11DE00E53FDE /* Array+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EF50E201E11DE00E53FDE /* Array+extensions.swift */; };
 		CE1EF512201E139500E53FDE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EF511201E139500E53FDE /* Constants.swift */; };
 		CE1EF514201E38DE00E53FDE /* UIImage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EF513201E38DE00E53FDE /* UIImage+extensions.swift */; };
+		CE1EF518201E8AAB00E53FDE /* GifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EF517201E8AAB00E53FDE /* GifViewController.swift */; };
 		CE4B21B9201CA58300530FA1 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B21B8201CA58300530FA1 /* Meta.swift */; };
 		CE5B25E520171A380054C2FD /* GiphyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5B25E420171A380054C2FD /* GiphyCell.xib */; };
 		CE5B25E720171A500054C2FD /* GiphyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25E620171A500054C2FD /* GiphyCell.swift */; };
@@ -26,6 +27,11 @@
 		CE87812F201136190063F070 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE87812D201136190063F070 /* Main.storyboard */; };
 		CE878131201136190063F070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE878130201136190063F070 /* Assets.xcassets */; };
 		CE878134201136190063F070 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE878132201136190063F070 /* LaunchScreen.storyboard */; };
+		CEF2D7C2201E9A62000FE35C /* Gif.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF2D7C1201E9A62000FE35C /* Gif.storyboard */; };
+		CEF2D7C4201EA565000FE35C /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2D7C3201EA565000FE35C /* StoreService.swift */; };
+		CEF2D7C6201EA834000FE35C /* GiphyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2D7C5201EA834000FE35C /* GiphyObject.swift */; };
+		CEF2D7C8201EAA95000FE35C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2D7C7201EAA95000FE35C /* Model.swift */; };
+		CEF2D7CA201EFE52000FE35C /* AppReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2D7C9201EFE52000FE35C /* AppReachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +39,7 @@
 		CE1EF50E201E11DE00E53FDE /* Array+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extensions.swift"; sourceTree = "<group>"; };
 		CE1EF511201E139500E53FDE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE1EF513201E38DE00E53FDE /* UIImage+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extensions.swift"; sourceTree = "<group>"; };
+		CE1EF517201E8AAB00E53FDE /* GifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifViewController.swift; sourceTree = "<group>"; };
 		CE4B21B8201CA58300530FA1 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		CE5B25E420171A380054C2FD /* GiphyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GiphyCell.xib; sourceTree = "<group>"; };
 		CE5B25E620171A500054C2FD /* GiphyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyCell.swift; sourceTree = "<group>"; };
@@ -50,6 +57,11 @@
 		CE878130201136190063F070 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE878133201136190063F070 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE878135201136190063F070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEF2D7C1201E9A62000FE35C /* Gif.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Gif.storyboard; sourceTree = "<group>"; };
+		CEF2D7C3201EA565000FE35C /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
+		CEF2D7C5201EA834000FE35C /* GiphyObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyObject.swift; sourceTree = "<group>"; };
+		CEF2D7C7201EAA95000FE35C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CEF2D7C9201EFE52000FE35C /* AppReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReachability.swift; sourceTree = "<group>"; };
 		DC77EB639702127227638616 /* Pods_AnimationApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimationApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA92D7AF70853CDE8753AC4 /* Pods-AnimationApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnimationApp/Pods-AnimationApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,8 +91,18 @@
 			isa = PBXGroup;
 			children = (
 				CE1EF511201E139500E53FDE /* Constants.swift */,
+				CEF2D7C9201EFE52000FE35C /* AppReachability.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CE1EF516201E8A8A00E53FDE /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				CE1EF517201E8AAB00E53FDE /* GifViewController.swift */,
+				CEF2D7C1201E9A62000FE35C /* Gif.storyboard */,
+			);
+			path = Gif;
 			sourceTree = "<group>";
 		};
 		CE5B25E2201719EA0054C2FD /* Giphy */ = {
@@ -145,6 +167,7 @@
 				CE5B25F220178CC60054C2FD /* GiphyList.swift */,
 				CE4B21B8201CA58300530FA1 /* Meta.swift */,
 				CE5B25FD201C970A0054C2FD /* Giphy.swift */,
+				CEF2D7C7201EAA95000FE35C /* Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,6 +201,7 @@
 		CE87813E201138000063F070 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CEF2D7C3201EA565000FE35C /* StoreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -194,6 +218,7 @@
 		CE8781402011385E0063F070 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				CEF2D7C5201EA834000FE35C /* GiphyObject.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -209,6 +234,7 @@
 		CE87814220113A620063F070 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CE1EF516201E8A8A00E53FDE /* Gif */,
 				CE87814320113A6F0063F070 /* Main */,
 			);
 			path = Modules;
@@ -325,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF2D7C2201E9A62000FE35C /* Gif.storyboard in Resources */,
 				CE878134201136190063F070 /* LaunchScreen.storyboard in Resources */,
 				CE878131201136190063F070 /* Assets.xcassets in Resources */,
 				CE87812F201136190063F070 /* Main.storyboard in Resources */,
@@ -365,6 +392,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -378,6 +406,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -412,15 +441,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5B25ED201785750054C2FD /* UICollectionViewCell+extensions.swift in Sources */,
+				CEF2D7CA201EFE52000FE35C /* AppReachability.swift in Sources */,
 				CE1EF514201E38DE00E53FDE /* UIImage+extensions.swift in Sources */,
 				CE5B25F320178CC60054C2FD /* GiphyList.swift in Sources */,
 				CE5B25EA201785400054C2FD /* String+extensions.swift in Sources */,
 				CE1EF50F201E11DE00E53FDE /* Array+extensions.swift in Sources */,
+				CEF2D7C6201EA834000FE35C /* GiphyObject.swift in Sources */,
 				CE5B25F120178C210054C2FD /* GiphyListViewModel.swift in Sources */,
 				CE4B21B9201CA58300530FA1 /* Meta.swift in Sources */,
 				CE87812C201136190063F070 /* MainViewController.swift in Sources */,
+				CEF2D7C8201EAA95000FE35C /* Model.swift in Sources */,
 				CE1EF512201E139500E53FDE /* Constants.swift in Sources */,
 				CE87812A201136190063F070 /* AppDelegate.swift in Sources */,
+				CE1EF518201E8AAB00E53FDE /* GifViewController.swift in Sources */,
+				CEF2D7C4201EA565000FE35C /* StoreService.swift in Sources */,
 				CE5B25F72017A3FC0054C2FD /* API.Giphy.swift in Sources */,
 				CE5B25F52017A24C0054C2FD /* API.swift in Sources */,
 				CE5B25E720171A500054C2FD /* GiphyCell.swift in Sources */,

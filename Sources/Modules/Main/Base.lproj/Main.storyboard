@@ -55,6 +55,10 @@
                                     <outlet property="delegate" destination="uhe-Gq-kEi" id="XHG-hp-mcp"/>
                                 </connections>
                             </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNV-bV-TRC">
+                                <rect key="frame" x="0.0" y="120" width="414" height="616"/>
+                                <color key="backgroundColor" red="0.79607843140000001" green="0.88235294119999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1tH-WR-6oK">
                                 <rect key="frame" x="10" y="130" width="394" height="596"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,15 +93,26 @@
                             <constraint firstItem="FhW-JN-F7Y" firstAttribute="trailing" secondItem="6ob-K0-lYr" secondAttribute="trailing" id="1Ii-wO-0eq"/>
                             <constraint firstItem="1tH-WR-6oK" firstAttribute="leading" secondItem="lJW-kC-0wp" secondAttribute="leading" constant="10" id="B0G-ss-kik"/>
                             <constraint firstItem="6ob-K0-lYr" firstAttribute="top" secondItem="FhW-JN-F7Y" secondAttribute="top" id="Hqf-eM-9cJ"/>
+                            <constraint firstItem="xNV-bV-TRC" firstAttribute="top" secondItem="6ob-K0-lYr" secondAttribute="bottom" id="Vsi-W2-M3G"/>
+                            <constraint firstItem="xNV-bV-TRC" firstAttribute="trailing" secondItem="FhW-JN-F7Y" secondAttribute="trailing" id="hs9-Ux-uIK"/>
                             <constraint firstItem="6ob-K0-lYr" firstAttribute="leading" secondItem="lJW-kC-0wp" secondAttribute="leading" id="jK5-gk-iZA"/>
                             <constraint firstItem="1tH-WR-6oK" firstAttribute="trailing" secondItem="lJW-kC-0wp" secondAttribute="trailing" constant="-10" id="rTr-uF-9jy"/>
+                            <constraint firstItem="xNV-bV-TRC" firstAttribute="leading" secondItem="FhW-JN-F7Y" secondAttribute="leading" id="sgv-kL-vBg"/>
                             <constraint firstAttribute="bottom" secondItem="1tH-WR-6oK" secondAttribute="bottom" constant="10" id="upd-dG-Xoq"/>
+                            <constraint firstItem="FhW-JN-F7Y" firstAttribute="bottom" secondItem="xNV-bV-TRC" secondAttribute="bottom" id="x3k-lJ-zOr"/>
                             <constraint firstItem="1tH-WR-6oK" firstAttribute="top" secondItem="6ob-K0-lYr" secondAttribute="bottom" constant="10" id="y2u-yq-Qad"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FhW-JN-F7Y"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dnm-zP-Okb"/>
+                    <navigationItem key="navigationItem" id="dnm-zP-Okb">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="xiD-wY-Zn9">
+                            <connections>
+                                <action selector="fetch:" destination="uhe-Gq-kEi" id="Fjy-Lv-W22"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="aspectGifView" destination="xNV-bV-TRC" id="VMc-e2-MJf"/>
                         <outlet property="collectionView" destination="1tH-WR-6oK" id="b5m-Br-3Wa"/>
                         <outlet property="searchBar" destination="6ob-K0-lYr" id="0K8-kb-yju"/>
                     </connections>

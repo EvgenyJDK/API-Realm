@@ -24,7 +24,8 @@ extension API {
     
     static func getList(search: String, handler:@escaping (GiphyList?) -> Void) {
         
-        let request = "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=AWKqC7bHY2fkSNpeu4T6Fr8SGFFRZYrh"
+        let request = Constatnts.API.url + search + Constatnts.API.apiKey
+        print(request)
         
         Alamofire.request(request).responseJSON { (response) in
             if let json = response.result.value as? [String : Any] {

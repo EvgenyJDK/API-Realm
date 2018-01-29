@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sources/API/API.swift"
-            timestampString = "538858900.742178"
+            timestampString = "538871888.936184"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -26,12 +26,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sources/API/API.swift"
-            timestampString = "538858900.7422431"
+            timestampString = "538871888.9362659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
             landmarkName = "getRequest(with:parameters:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/Modules/Gif/GifViewController.swift"
+            timestampString = "538913179.608307"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "closeGifBoard(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AnimationApp.GifViewController.closeGifBoard(Any) -&gt; ()"
+                  moduleName = "AnimationApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/SYSTEM/JOB/PERFECTORIUM/APPLICATION/ANIMATION%20APP/AnimationApp/Sources/Modules/Gif/GifViewController.swift"
+                  timestampString = "538912887.1418101"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in AnimationApp.GifViewController.closeGifBoard(Any) -&gt; ()"
+                  moduleName = "AnimationApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/SYSTEM/JOB/PERFECTORIUM/APPLICATION/ANIMATION%20APP/AnimationApp/Sources/Modules/Gif/GifViewController.swift"
+                  timestampString = "538912887.144399"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/Services/StoreService.swift"
+            timestampString = "538913179.608686"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "fetch()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
