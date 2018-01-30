@@ -9,10 +9,9 @@
 import Foundation
 import UIKit
 
-class GifViewController: UIViewController, UIGestureRecognizerDelegate {
+class GifViewController: UIViewController {
     
     @IBOutlet var aspectGifView: UIView!
-    @IBOutlet weak var tapGestureRecognizer: UITapGestureRecognizer!
     
     var giphy: Giphy? = nil
     var url = ""
@@ -23,6 +22,10 @@ class GifViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     private func configureView() {
+        
+        let leftItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(GifViewController.dismissVC))
+        self.navigationItem.setLeftBarButton(leftItem, animated: false)
+
 //        guard let giphy = giphy else { return }
 //        if let url = giphy.preview {
 //            let imageURL = UIImage.gifImageWithURL(url)
@@ -44,14 +47,8 @@ class GifViewController: UIViewController, UIGestureRecognizerDelegate {
         aspectGifView.addSubview(gifImage)
     }
     
-    @IBAction func closeGifBoard(_ sender: Any) {
-        
-        DispatchQueue.main.async {
-            self.dismiss(animated: true, completion: {
-//                completion?()
-            })
-        }
-
+    @objc private func dismissVC() {
+        _ = navigationController?.popToRootViewController(animated: false)
     }
-    
+ 
 }

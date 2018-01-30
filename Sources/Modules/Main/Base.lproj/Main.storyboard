@@ -105,9 +105,9 @@
                         <viewLayoutGuide key="safeArea" id="FhW-JN-F7Y"/>
                     </view>
                     <navigationItem key="navigationItem" id="dnm-zP-Okb">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="xiD-wY-Zn9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="xiD-wY-Zn9">
                             <connections>
-                                <action selector="fetch:" destination="uhe-Gq-kEi" id="Fjy-Lv-W22"/>
+                                <action selector="clearDB:" destination="uhe-Gq-kEi" id="nNB-h3-TAa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -51,20 +51,30 @@ class GiphyListViewModel {
     private func loadList(search: String) {
         API.getList(search: search) { [weak self] (giphyList) in
             if let list = giphyList {
+                var giphyArr: [Giphy] = []
                 list.giphy?.forEach({ (giphy) in
-                    print(giphy.id ?? 0)
-                    print(giphy.original ?? "")
-                    print(giphy.preview ?? "")
-                    StoreService.shared.store(giphy: giphy)
-                    self?.giphyList.value.append(giphy)
+//                    StoreService.shared.store(giphy: giphy)
+                    giphyArr.append(giphy)
                 })
+                self?.giphyList.value = giphyArr
             }
             self?.successHandler(self?.giphyList.value ?? [])
         }
     }
     
     private func loadListFromStore() {
-        giphyList.value = StoreService.shared.fetch()
+        giphyList.value = StoreService.shared.load()
         self.successHandler(self.giphyList.value)
     }
+    
+    func removeGiphy(giphy: Giphy) {
+        for _ in giphyList.value {
+            if let index = giphyList.value.index(where: { $0.id == giphy.id }) {
+                giphyList.value.remove(at: index)
+            }
+            successHandler(giphyList.value)
+        }
+    }
+    
+    
 }

@@ -28,6 +28,7 @@ class MainViewController: UIViewController, UISearchBarDelegate {
     let defaultSearch = ""
     var modeState: ModeState = .offline
     var timer: Timer?
+    var needRemoveGiphy: [Giphy] = []
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,18 +37,13 @@ class MainViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurateCollection()
+        configurateUI()
         observeInternetConnection()
         observeViewModel()
         load(search: defaultSearch)
     }
 
-    @IBAction func fetch(_ sender: Any) {
-        giphyList.value = StoreService.shared.fetch()
-        collectionView.reloadData()
-    }
-    
-    private func configurateCollection() {
+    private func configurateUI() {
         collectionView.register(UINib(nibName: GiphyCell.classIdentifier, bundle: nil), forCellWithReuseIdentifier: String(describing: GiphyCell.self))
     }
     
@@ -55,6 +51,7 @@ class MainViewController: UIViewController, UISearchBarDelegate {
         AppReachability.shared.isReachable.asDriver().filterNil().drive(onNext: { [weak self] connection in
             if connection { self?.modeState = .online }
             else { self?.modeState = .offline }
+            self?.load(search: defaultSearch)
         }).disposed(by: disposeBag)
     }
     
@@ -94,17 +91,29 @@ class MainViewController: UIViewController, UISearchBarDelegate {
     @objc func searchGiphy(timer: Timer) {
         guard let search = timer.userInfo as? String else { return }
         if search == defaultSearch {
-            load(search: search)
-        } else {
-            load(search: search)
+            needRemoveGiphy = giphyList.value
+            removeGiphy()
         }
-        
-        if let search = timer.userInfo as? String {
-            print(search)
+            load(search: search)
         }
     }
     
+    private func removeGiphy() {
+        for giphy in needRemoveGiphy {
+            giphyListViewModel.removeGiphy(giphy: giphy)
+        }
+        needRemoveGiphy.removeAll()
+    }
 
+    
+    //MARK: - Actions
+    @IBAction func clearDB(_ sender: Any) {
+        StoreService.shared.remove()
+        needRemoveGiphy = giphyList.value
+        removeGiphy()
+    }
+    
+    
 }
 
 // MARK: - UICollectionViewDatasource

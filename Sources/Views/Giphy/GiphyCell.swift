@@ -9,7 +9,8 @@
 
 import UIKit
 import Foundation
-
+import SDWebImage
+import SwiftGifOrigin
 
 class GiphyCell: UICollectionViewCell {
 
@@ -23,21 +24,25 @@ class GiphyCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-
+        gifImageView.image = nil
     }
     
     func fillWith(model: Giphy) {
-        
         idLabel.text = model.id
-        let gifURL : String = model.preview!
-        let imageURL = UIImage.gifImageWithURL(gifURL)
-        let gifImage = UIImageView(image: imageURL)
-        gifImage.frame = gifImageView.frame
-        gifImage.autoresizingMask = UIViewAutoresizing.flexibleWidth
-
-        gifImage.contentMode = UIViewContentMode.scaleAspectFill
-        gifImageView.addSubview(gifImage)
-//        gifImageView = UIImageView(image: imageURL)
+        gifImageView.image = UIImage.gif(url: model.preview!)
+        StoreService.shared.store(giphy: model)
+        
+//        gifImageView.sd_setImage(with: NSURL(fileURLWithPath: model.preview!) as URL) { (uiImage, error, sdImageCasheType, url) in
+//        }
+        
+//        let gifURL : String = model.preview!
+//        let imageURL = UIImage.gifImageWithURL(gifURL)
+//        let gifImage = UIImageView(image: imageURL)
+//        gifImage.frame = gifImageView.frame
+//        gifImage.autoresizingMask = UIViewAutoresizing.flexibleWidth
+//        gifImage.contentMode = UIViewContentMode.scaleAspectFill
+//        gifImageView.addSubview(gifImage)
+////        gifImageView = UIImageView(image: imageURL)
     
     }
     

@@ -20,31 +20,12 @@
                     <view key="view" contentMode="scaleToFill" id="Y3a-fW-X0x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N44-mN-Zy3">
-                                <rect key="frame" x="7" y="158" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="X2U-t3-aTE" appends="YES" id="wab-pa-eKA"/>
-                                </connections>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="aspectGifView" destination="Y3a-fW-X0x" id="Yb5-Pc-im3"/>
-                        <outlet property="tapGestureRecognizer" destination="X2U-t3-aTE" id="m1D-M6-g9v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYu-Pi-pSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="X2U-t3-aTE">
-                    <connections>
-                        <action selector="closeGifBoard:" destination="8fY-2p-IXT" id="0I9-xh-e3f"/>
-                        <outlet property="delegate" destination="8fY-2p-IXT" id="CaS-bO-bQx"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-196" y="-338.68065967016497"/>
         </scene>
