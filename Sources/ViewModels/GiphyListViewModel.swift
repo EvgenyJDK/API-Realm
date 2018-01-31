@@ -16,6 +16,7 @@ class GiphyListViewModel {
     var successHandler: (([Giphy]) -> Void) = {giphyList in }
     var errorHandler: ((NSError) -> Void) = {_ in }
     var giphyList: Variable<[Giphy]> = Variable([])
+    weak var mainVC: MainViewController?
     
     init() {
 
@@ -53,10 +54,15 @@ class GiphyListViewModel {
             if let list = giphyList {
                 var giphyArr: [Giphy] = []
                 list.giphy?.forEach({ (giphy) in
-//                    StoreService.shared.store(giphy: giphy)
+                    print(giphy.preview)
+                    print(giphy.large)
+                    StoreService.shared.store(giphy: giphy)
                     giphyArr.append(giphy)
                 })
                 self?.giphyList.value = giphyArr
+            }
+            if search == Constatnts.API.defaultSearch {
+                NotificationCenter.default.post(name: Notification.Name("UpdatesLoaded"), object: nil)
             }
             self?.successHandler(self?.giphyList.value ?? [])
         }

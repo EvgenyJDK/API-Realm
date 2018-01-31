@@ -18,6 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         AppReachability.shared.startListening()
         
+        let firstLaunch = UserDefaults.standard.bool(forKey: Constatnts.UserDefaults.firstLaunch)
+        print(firstLaunch)
+//        guard firstLaunch else {
+//            print(firstLaunch)
+//            UserDefaults.standard.set(true, forKey: Constatnts.UserDefaults.firstLaunch)
+//            return true }
+//        print(firstLaunch)
+//        UserDefaults.standard.set(false, forKey: Constatnts.UserDefaults.launch)
+
+//        let launchCount = UserDefaults.standard.integer(forKey: Constatnts.UserDefaults.launchCount)
+//        UserDefaults.standard.set(launchCount + 1, forKey: Constatnts.UserDefaults.launchCount)
+//        UserDefaults.standard.synchronize()
+        
         return true
     }
 

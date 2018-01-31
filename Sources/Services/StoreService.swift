@@ -32,7 +32,7 @@ class StoreService {
         var giphyList: [Giphy] = []
         let giphy = realm.objects(GiphyObject.self)
         giphy.forEach { (giphyObject) in
-            if let giphy = Giphy.init(id: giphyObject.id, original: giphyObject.original, preview: giphyObject.preview) {
+            if let giphy = Giphy.init(id: giphyObject.id, large: giphyObject.original, preview: giphyObject.preview) {
                 giphyList.append(giphy)
             }
         }

@@ -14,8 +14,8 @@ target 'AnimationApp' do
     pod 'RxOptional'
     pod 'SwiftyJSON'
     pod 'SDWebImage'
-    pod 'SwiftGifOrigin'
-    pod 'FLAnimatedImage'
+    pod 'SDWebImage/GIF'
+    pod 'SwiftGifOrigin'    
 
 end
 

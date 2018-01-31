@@ -12,7 +12,6 @@
 		CE1EF512201E139500E53FDE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EF511201E139500E53FDE /* Constants.swift */; };
 		CE1EF514201E38DE00E53FDE /* UIImage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EF513201E38DE00E53FDE /* UIImage+extensions.swift */; };
 		CE1EF518201E8AAB00E53FDE /* GifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EF517201E8AAB00E53FDE /* GifViewController.swift */; };
-		CE4B21B9201CA58300530FA1 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B21B8201CA58300530FA1 /* Meta.swift */; };
 		CE5B25E520171A380054C2FD /* GiphyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5B25E420171A380054C2FD /* GiphyCell.xib */; };
 		CE5B25E720171A500054C2FD /* GiphyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25E620171A500054C2FD /* GiphyCell.swift */; };
 		CE5B25EA201785400054C2FD /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25E9201785400054C2FD /* String+extensions.swift */; };
@@ -40,7 +39,6 @@
 		CE1EF511201E139500E53FDE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE1EF513201E38DE00E53FDE /* UIImage+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extensions.swift"; sourceTree = "<group>"; };
 		CE1EF517201E8AAB00E53FDE /* GifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifViewController.swift; sourceTree = "<group>"; };
-		CE4B21B8201CA58300530FA1 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		CE5B25E420171A380054C2FD /* GiphyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GiphyCell.xib; sourceTree = "<group>"; };
 		CE5B25E620171A500054C2FD /* GiphyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyCell.swift; sourceTree = "<group>"; };
 		CE5B25E9201785400054C2FD /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 			children = (
 				CE8781402011385E0063F070 /* Realm */,
 				CE5B25F220178CC60054C2FD /* GiphyList.swift */,
-				CE4B21B8201CA58300530FA1 /* Meta.swift */,
 				CE5B25FD201C970A0054C2FD /* Giphy.swift */,
 				CEF2D7C7201EAA95000FE35C /* Model.swift */,
 			);
@@ -454,7 +451,6 @@
 				CE1EF50F201E11DE00E53FDE /* Array+extensions.swift in Sources */,
 				CEF2D7C6201EA834000FE35C /* GiphyObject.swift in Sources */,
 				CE5B25F120178C210054C2FD /* GiphyListViewModel.swift in Sources */,
-				CE4B21B9201CA58300530FA1 /* Meta.swift in Sources */,
 				CE87812C201136190063F070 /* MainViewController.swift in Sources */,
 				CEF2D7C8201EAA95000FE35C /* Model.swift in Sources */,
 				CE1EF512201E139500E53FDE /* Constants.swift in Sources */,

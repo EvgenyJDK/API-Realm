@@ -26,10 +26,10 @@ class MainViewController: UIViewController, UISearchBarDelegate {
     private var giphyList: Variable<[Giphy]> = Variable([])
     let disposeBag = DisposeBag()
     let defaultSearch = ""
-    var modeState: ModeState = .offline
-    var timer: Timer?
+    var modeState: ModeState = .online
     var needRemoveGiphy: [Giphy] = []
-    
+    var needUpdates = true
+    var timer: Timer?
     
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.title = "GIPHY"
@@ -40,7 +40,9 @@ class MainViewController: UIViewController, UISearchBarDelegate {
         configurateUI()
         observeInternetConnection()
         observeViewModel()
-        load(search: defaultSearch)
+        observeNotifications()
+        launchApp()
+//        load(search: defaultSearch)
     }
 
     private func configurateUI() {
@@ -51,17 +53,32 @@ class MainViewController: UIViewController, UISearchBarDelegate {
         AppReachability.shared.isReachable.asDriver().filterNil().drive(onNext: { [weak self] connection in
             if connection { self?.modeState = .online }
             else { self?.modeState = .offline }
-            self?.load(search: defaultSearch)
+            self?.load(search: (self?.defaultSearch)!)
         }).disposed(by: disposeBag)
+    }
+    
+    private func observeNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updatesLoaded), name: Notification.Name("UpdatesLoaded"), object: nil)
     }
     
     private func observeViewModel() {
         giphyListViewModel.successHandler = { [weak self] (giphyList) in
             self?.giphyList.value = giphyList
             self?.collectionView.reloadData()
+            self?.checkForUpdates()
         }
         giphyListViewModel.errorHandler = { error in
             print("GiphyListViewModel errorHandler")
+        }
+    }
+
+    private func launchApp() {
+        if UserDefaults.standard.bool(forKey: Constatnts.UserDefaults.firstLaunch) {
+            load(search: defaultSearch)
+        } else {
+            UserDefaults.standard.set(true, forKey: Constatnts.UserDefaults.firstLaunch)
+            needUpdates = false
+            load(search: Constatnts.API.defaultSearch)
         }
     }
     
@@ -76,8 +93,27 @@ class MainViewController: UIViewController, UISearchBarDelegate {
         }
     }
     
-// MARK: - SearchBar Delegate
+    private func checkForUpdates() {
+        guard needUpdates else { return }
+        load(search: Constatnts.API.defaultSearch)
+        needUpdates = false
+    }
 
+    @objc private func updatesLoaded() {
+        needUpdates = false
+    }
+    
+// MARK: - SearchBar Delegate
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+//        needRemoveGiphy = giphyList.value
+//        removeGiphy()
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         timer?.invalidate()
         timer = Timer.scheduledTimer(
@@ -95,7 +131,6 @@ class MainViewController: UIViewController, UISearchBarDelegate {
             removeGiphy()
         }
             load(search: search)
-        }
     }
     
     private func removeGiphy() {
@@ -104,7 +139,6 @@ class MainViewController: UIViewController, UISearchBarDelegate {
         }
         needRemoveGiphy.removeAll()
     }
-
     
     //MARK: - Actions
     @IBAction func clearDB(_ sender: Any) {
@@ -112,8 +146,7 @@ class MainViewController: UIViewController, UISearchBarDelegate {
         needRemoveGiphy = giphyList.value
         removeGiphy()
     }
-    
-    
+
 }
 
 // MARK: - UICollectionViewDatasource
@@ -155,11 +188,9 @@ extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let model = modelFrom(indexPath: indexPath)
-//        show(model: model)
         
         let gifStoryboard = UIStoryboard.init(name: "Gif", bundle: nil)
         let gifViewController = gifStoryboard.instantiateViewController(withIdentifier: "GifViewController") as! GifViewController
-        gifViewController.url = model.preview!
         gifViewController.giphy = model
         navigationController?.pushViewController(gifViewController, animated: false)
 

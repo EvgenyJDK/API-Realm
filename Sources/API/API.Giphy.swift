@@ -29,9 +29,7 @@ extension API {
         
         Alamofire.request(request).responseJSON { (response) in
             if let json = response.result.value as? [String : Any] {
-                let meta = Mapper<Meta>().map(JSON: json)
-                print(meta?.msg ?? "")
-                
+
                 if let list = Mapper<GiphyList>().map(JSON: json) {
                     handler(list)
                 }

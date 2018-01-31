@@ -20,9 +20,21 @@
                     <view key="view" contentMode="scaleToFill" id="Y3a-fW-X0x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NmG-VE-Wk2">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="yAQ-YN-clK" firstAttribute="top" secondItem="NmG-VE-Wk2" secondAttribute="bottom" id="dSI-Wk-zl3"/>
+                            <constraint firstItem="NmG-VE-Wk2" firstAttribute="leading" secondItem="Y3a-fW-X0x" secondAttribute="leading" id="fKg-R2-K3G"/>
+                            <constraint firstAttribute="trailing" secondItem="NmG-VE-Wk2" secondAttribute="trailing" id="h1n-8K-fJW"/>
+                            <constraint firstItem="NmG-VE-Wk2" firstAttribute="top" secondItem="6F0-vO-MTc" secondAttribute="bottom" id="nWX-dP-4xH"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="aspectGifView" destination="Y3a-fW-X0x" id="Yb5-Pc-im3"/>
+                        <outlet property="fullScreenGif" destination="NmG-VE-Wk2" id="qji-ve-3aF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYu-Pi-pSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
