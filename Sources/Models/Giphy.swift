@@ -8,9 +8,8 @@
 
 import Foundation
 import ObjectMapper
-import SwiftyJSON
 
-class Giphy: Mappable, Model {
+class Giphy: Mappable {
     
     var id = ""
     var original: String?
@@ -22,19 +21,10 @@ class Giphy: Mappable, Model {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentDirectorPath: String = paths[0]
         let giphyDirectoryPath = documentDirectorPath.appending("/giphy/")
-//        var filePath = id.replacingOccurrences(of: " ", with: "")
         let filePath = giphyDirectoryPath.appending("/\(id).gif")
         let fileUrl = URL.init(fileURLWithPath: filePath)
         return fileUrl
     }
-    
-    
-    
-//    var json: JSON {
-//        return JSON.init(["id" : id,
-//                          "original" : original,
-//                          "preview" : preview])
-//    }
     
     required init?(map: Map) {
     }
@@ -44,10 +34,6 @@ class Giphy: Mappable, Model {
 //        self.original = original
         self.preview = preview
         self.large = large
-    }
-    
-    required init(json: JSON) {
-
     }
     
     func mapping(map: Map) {

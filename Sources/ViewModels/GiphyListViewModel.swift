@@ -9,7 +9,6 @@
 import Foundation
 import RxSwift
 import ObjectMapper
-import SwiftyJSON
 
 class GiphyListViewModel {
     
@@ -18,41 +17,18 @@ class GiphyListViewModel {
     var giphyList: Variable<[Giphy]> = Variable([])
     
     init() {
-
     }
     
     func load(search: String, online: Bool) {
         if online { loadList(search: search) }
         else { loadListFromStore() }
     }
-    
-    private func loadGiphyList(searchText: String) {
-        API.getGiphyList(searchText: searchText) { [weak self] (json, error) in
-//            if let error = error {
-//                self?.errorHandler(error)
-//                return
-//            }
-//            if let res = json as? [String: Any] {
-//                let giphyList = Mapper<GiphyList>().map(JSON: res)
-//                print(giphyList?.giphy?.count ?? 0)
-//
-//                giphyList?.giphy?.forEach({ (giphy) in
-//                    print(giphy.id ?? 0)
-//                    print(giphy.original ?? "")
-//                    print(giphy.preview ?? "")
-//                    self?.giphyList.value.append(giphy)
-//                })
-//            }
-        }
-    }
-    
+
     private func loadList(search: String) {
         API.getList(search: search) { [weak self] (giphyList) in
             if let list = giphyList {
                 var giphyArr: [Giphy] = []
                 list.giphy?.forEach({ (giphy) in
-                    print(giphy.preview)
-                    print(giphy.large)
                     if search == Constatnts.API.defaultSearch {
                         StoreService.shared.store(giphy: giphy)
                     }
@@ -79,6 +55,5 @@ class GiphyListViewModel {
             }
             successHandler(giphyList.value)
         }
-    }
-    
+    } 
 }

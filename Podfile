@@ -12,9 +12,6 @@ target 'AnimationApp' do
     pod 'RxCocoa'
     pod 'RxDataSources'
     pod 'RxOptional'
-    pod 'SwiftyJSON'
-    pod 'SDWebImage'
-    pod 'SDWebImage/GIF'
     pod 'SwiftGifOrigin'    
 
 end

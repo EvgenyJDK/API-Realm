@@ -8,31 +8,21 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
+import ObjectMapper
 
 enum API {
 
-    private static let url = "http://api.giphy.com/v1/gifs/search?q="
-    static func headers() -> HTTPHeaders {
-        return [:]
-    }
-    
-    static func getRequest(with path: String, parameters: [String : Any]) -> DataRequest {
-        print("API GET = \(API.url + path + "&api_key=AWKqC7bHY2fkSNpeu4T6Fr8SGFFRZYrh")")
-        print("PARAMETERS = \(parameters)")
-        return Alamofire.request(API.url + path,
-                                 method: .get,
-                                 parameters: parameters,
-                                 encoding: JSONEncoding.default,
-                                 headers: API.headers())
-    }
-    
-    static func validate(response: DataResponse<Any>, handler: @escaping ((SwiftyJSON.JSON?, NSError?) -> Void)) {
-        if let error = response.result.error {
-            handler(nil, error as NSError)
-        } else if let value = response.result.value {
-            let json = JSON(value)
-            handler(json, nil)
+    static func getList(search: String, handler:@escaping (GiphyList?) -> Void) {
+        
+        let request = Constatnts.API.url + search + Constatnts.API.apiKey
+        print(request)
+        Alamofire.request(request).responseJSON { (response) in
+            if let json = response.result.value as? [String : Any] {
+                if let list = Mapper<GiphyList>().map(JSON: json) {
+                    handler(list)
+                }
+                handler(nil)
+            }
         }
     }
 }

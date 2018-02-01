@@ -23,7 +23,6 @@ class GiphyObject: Object {
     
     func fillFrom(giphy: Giphy) {
         id = giphy.id
-//        if let giphyId = giphy.id { id = giphyId }
         if let giphyPreview = giphy.preview { preview = giphyPreview }
         if let giphyOriginal = giphy.original { original = giphyOriginal }
         if let giphyLarge = giphy.large { large = giphyLarge }

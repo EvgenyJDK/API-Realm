@@ -7,7 +7,6 @@
 //
 
 import RealmSwift
-import  SwiftyJSON
 
 class StoreService {
     static let shared = StoreService()
@@ -35,10 +34,6 @@ class StoreService {
     
     func load() -> [Giphy] {
         let realm = try! Realm()
-//        let giphy: [Giphy] = realm.objects(GiphyObject.self).reversed().map({
-//            let giphy = Giphy.init(json: $0.json)
-//            return giphy
-//        })
         var giphyList: [Giphy] = []
         let giphy = realm.objects(GiphyObject.self)
         giphy.forEach { (giphyObject) in
@@ -49,18 +44,12 @@ class StoreService {
         return giphyList
     }
     
-    
     func remove() {
         DispatchQueue(label: "background").async {
             let realm = try! Realm()
             try! realm.write {
                 realm.delete(realm.objects(GiphyObject.self))
-//                let giphyRealm = realm.objects(GiphyObject.self).filter("id contains '\(giphy.id)'")
-//                if giphyRealm.count != 0 {
-//                    realm.delete(giphyRealm)
-//                }
             }
         }
     }
-    
 }

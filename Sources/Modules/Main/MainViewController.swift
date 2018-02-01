@@ -43,7 +43,6 @@ class MainViewController: UIViewController, UISearchBarDelegate {
         observeViewModel()
         observeNotifications()
         launchApp()
-//        load(search: defaultSearch)
     }
 
     private func configurateUI() {
@@ -152,10 +151,6 @@ class MainViewController: UIViewController, UISearchBarDelegate {
 extension MainViewController: UICollectionViewDataSource {
     fileprivate func modelFrom(indexPath: IndexPath) -> Giphy {
         let index = indexPath.section * Constatnts.UI.countItemInSection + indexPath.row
-        print("INDEX PATH SECTION = \(indexPath.section)")
-        print("INDEX PATH ROW = \(indexPath.row)")
-        print("INDEX = \(index)")
-
         return giphyList.value[index]
     }
     
@@ -165,15 +160,13 @@ extension MainViewController: UICollectionViewDataSource {
         }
         let request = Alamofire.download(model.preview!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, to: destination)
         request.response { [weak self] (response) in
-            if response.error == nil, let giphyPath = response.destinationURL?.path {
-                print("----- CELL LOAD IMAGE = \(giphyPath)")
+            if response.error == nil, let _ = response.destinationURL?.path {
                 callback(model, true)
             }
         }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print("ROUNDING NUMBER OF SECTIONS = \(giphyList.value.roundingCountSection(Constatnts.UI.countItemInSection))")
         return giphyList.value.roundingCountSection(Constatnts.UI.countItemInSection)
     }
 
@@ -209,15 +202,11 @@ extension MainViewController: UICollectionViewDataSource {
 
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
         let model = modelFrom(indexPath: indexPath)
-        
         let gifStoryboard = UIStoryboard.init(name: "Gif", bundle: nil)
         let gifViewController = gifStoryboard.instantiateViewController(withIdentifier: "GifViewController") as! GifViewController
         gifViewController.giphy = model
         navigationController?.pushViewController(gifViewController, animated: false)
-
     }
-
 }
 
