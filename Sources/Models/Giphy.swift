@@ -56,4 +56,5 @@ class Giphy: Mappable, Model {
         preview         <- map["images.preview_gif.url"]
         large           <- map["images.downsized_large.url"]
     }
+  
 }

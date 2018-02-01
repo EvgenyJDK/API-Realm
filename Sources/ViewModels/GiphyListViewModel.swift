@@ -16,7 +16,6 @@ class GiphyListViewModel {
     var successHandler: (([Giphy]) -> Void) = {giphyList in }
     var errorHandler: ((NSError) -> Void) = {_ in }
     var giphyList: Variable<[Giphy]> = Variable([])
-    weak var mainVC: MainViewController?
     
     init() {
 
@@ -25,8 +24,6 @@ class GiphyListViewModel {
     func load(search: String, online: Bool) {
         if online { loadList(search: search) }
         else { loadListFromStore() }
-//        loadGiphyList(searchText: "funny+cat")
-//        loadList(search: "funny+cat")
     }
     
     private func loadGiphyList(searchText: String) {
@@ -56,7 +53,9 @@ class GiphyListViewModel {
                 list.giphy?.forEach({ (giphy) in
                     print(giphy.preview)
                     print(giphy.large)
-                    StoreService.shared.store(giphy: giphy)
+                    if search == Constatnts.API.defaultSearch {
+                        StoreService.shared.store(giphy: giphy)
+                    }
                     giphyArr.append(giphy)
                 })
                 self?.giphyList.value = giphyArr
@@ -81,6 +80,5 @@ class GiphyListViewModel {
             successHandler(giphyList.value)
         }
     }
-    
     
 }

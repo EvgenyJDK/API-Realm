@@ -106,15 +106,6 @@ class MainViewController: UIViewController, UISearchBarDelegate {
     
 // MARK: - SearchBar Delegate
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-//        needRemoveGiphy = giphyList.value
-//        removeGiphy()
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        
-    }
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         timer?.invalidate()
         timer = Timer.scheduledTimer(
@@ -142,6 +133,12 @@ class MainViewController: UIViewController, UISearchBarDelegate {
     }
     
     //MARK: - Actions
+    @IBAction func addToDB(_ sender: Any) {
+        giphyList.value.forEach { (giphy) in
+            StoreService.shared.store(giphy: giphy)
+        }
+    }
+    
     @IBAction func clearDB(_ sender: Any) {
         StoreService.shared.remove()
         needRemoveGiphy = giphyList.value

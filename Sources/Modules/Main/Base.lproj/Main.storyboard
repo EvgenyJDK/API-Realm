@@ -116,6 +116,11 @@
                         <viewLayoutGuide key="safeArea" id="FhW-JN-F7Y"/>
                     </view>
                     <navigationItem key="navigationItem" id="dnm-zP-Okb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="SHQ-4T-9DM">
+                            <connections>
+                                <action selector="addToDB:" destination="uhe-Gq-kEi" id="xaZ-tn-HPr"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="xiD-wY-Zn9">
                             <connections>
                                 <action selector="clearDB:" destination="uhe-Gq-kEi" id="nNB-h3-TAa"/>
