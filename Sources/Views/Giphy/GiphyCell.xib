@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,10 +21,12 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LFI-Lh-AiM">
                         <rect key="frame" x="0.0" y="0.0" width="101" height="166"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FIRST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoO-eP-W8E">
-                        <rect key="frame" x="32" y="34" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoO-eP-W8E">
+                        <rect key="frame" x="0.0" y="145" width="101" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="god-ZK-02o"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -34,11 +35,13 @@
             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="LFI-Lh-AiM" firstAttribute="top" secondItem="qfQ-fU-n3S" secondAttribute="top" id="9Ip-3f-uHl"/>
+                <constraint firstItem="OoO-eP-W8E" firstAttribute="leading" secondItem="LFI-Lh-AiM" secondAttribute="leading" id="CeS-8q-cnP"/>
                 <constraint firstItem="LFI-Lh-AiM" firstAttribute="leading" secondItem="qfQ-fU-n3S" secondAttribute="leading" id="FFh-K7-Xrw"/>
                 <constraint firstAttribute="trailing" secondItem="LFI-Lh-AiM" secondAttribute="trailing" id="JkB-3z-5k8"/>
+                <constraint firstItem="OoO-eP-W8E" firstAttribute="trailing" secondItem="LFI-Lh-AiM" secondAttribute="trailing" id="jGs-Hl-L1g"/>
                 <constraint firstAttribute="bottom" secondItem="LFI-Lh-AiM" secondAttribute="bottom" id="pxb-7m-7cI"/>
+                <constraint firstAttribute="bottom" secondItem="OoO-eP-W8E" secondAttribute="bottom" id="zpC-lE-ATk"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="MP6-1T-k3d"/>
             <connections>
                 <outlet property="gifImageView" destination="LFI-Lh-AiM" id="Qqg-1M-IRf"/>
                 <outlet property="idLabel" destination="OoO-eP-W8E" id="hWV-Js-mxl"/>

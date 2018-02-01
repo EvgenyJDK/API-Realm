@@ -15,6 +15,7 @@ class GiphyObject: Object {
     @objc dynamic var preview = ""
     @objc dynamic var original = ""
     @objc dynamic var large = ""
+    @objc dynamic var isLoaded = false
 
     override static func primaryKey() -> String? {
         return "id"
@@ -26,5 +27,6 @@ class GiphyObject: Object {
         if let giphyPreview = giphy.preview { preview = giphyPreview }
         if let giphyOriginal = giphy.original { original = giphyOriginal }
         if let giphyLarge = giphy.large { large = giphyLarge }
+        isLoaded = giphy.isLoaded
     }
 }

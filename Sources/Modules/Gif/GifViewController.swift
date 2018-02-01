@@ -41,8 +41,10 @@ class GifViewController: UIViewController {
 //        }
 
 
-        let data = try? Data(contentsOf: giphy.fileUrl)
-        fullScreenGif.image = UIImage.gif(data: data!)
+        if let data = try? Data(contentsOf: giphy.fileUrl) {
+            fullScreenGif.image = UIImage.gif(data: data)
+        }
+        
         
 
 // Animate GIF with SwiftGifOrigin

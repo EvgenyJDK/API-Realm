@@ -23,6 +23,16 @@ class StoreService {
         }
     }
     
+    func updateStore(gihy: Giphy) {
+        DispatchQueue(label: "background").async {
+            let realm = try! Realm()
+            try! realm.write {
+                let model = realm.objects(GiphyObject.self).filter("id contains '\(gihy.id)'").first
+                model?.isLoaded = gihy.isLoaded
+            }
+        }
+    }
+    
     func load() -> [Giphy] {
         let realm = try! Realm()
 //        let giphy: [Giphy] = realm.objects(GiphyObject.self).reversed().map({

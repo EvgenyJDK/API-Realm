@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import RxSwift
 import RxOptional
+import Alamofire
 
 enum ModeState {
     case offline
@@ -157,11 +158,24 @@ extension MainViewController: UICollectionViewDataSource {
         print("INDEX PATH SECTION = \(indexPath.section)")
         print("INDEX PATH ROW = \(indexPath.row)")
         print("INDEX = \(index)")
+
         return giphyList.value[index]
     }
     
+    fileprivate func loadImage(model: Giphy, callback: @escaping (Giphy, Bool)->()) {
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            return (model.fileUrl, [.removePreviousFile, .createIntermediateDirectories])
+        }
+        let request = Alamofire.download(model.preview!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, to: destination)
+        request.response { [weak self] (response) in
+            if response.error == nil, let giphyPath = response.destinationURL?.path {
+                print("----- CELL LOAD IMAGE = \(giphyPath)")
+                callback(model, true)
+            }
+        }
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-
         print("ROUNDING NUMBER OF SECTIONS = \(giphyList.value.roundingCountSection(Constatnts.UI.countItemInSection))")
         return giphyList.value.roundingCountSection(Constatnts.UI.countItemInSection)
     }
@@ -176,7 +190,19 @@ extension MainViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GiphyCell.classIdentifier, for: indexPath) as! GiphyCell
         let model = modelFrom(indexPath: indexPath)
         cell.fillWith(model: model)
-        
+
+        guard !model.isLoaded else { return cell }
+        DispatchQueue.main.async {
+            self.loadImage(model: model, callback: { (model, state) in
+                model.isLoaded = state
+                StoreService.shared.updateStore(gihy: model)
+                if let updateCell = collectionView.cellForItem(at: indexPath) as? GiphyCell {
+                    if let data = try? Data(contentsOf: model.fileUrl) {
+                        updateCell.gifImageView.image = UIImage.gif(data: data)
+                    }
+                }
+            })
+        }
         return cell
     }
 }

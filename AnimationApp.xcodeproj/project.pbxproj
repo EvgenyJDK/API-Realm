@@ -12,6 +12,7 @@
 		CE1EF512201E139500E53FDE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EF511201E139500E53FDE /* Constants.swift */; };
 		CE1EF514201E38DE00E53FDE /* UIImage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EF513201E38DE00E53FDE /* UIImage+extensions.swift */; };
 		CE1EF518201E8AAB00E53FDE /* GifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EF517201E8AAB00E53FDE /* GifViewController.swift */; };
+		CE209E062022787800C0F1FA /* ColumnsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE209E052022787800C0F1FA /* ColumnsFlowLayout.swift */; };
 		CE5B25E520171A380054C2FD /* GiphyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5B25E420171A380054C2FD /* GiphyCell.xib */; };
 		CE5B25E720171A500054C2FD /* GiphyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25E620171A500054C2FD /* GiphyCell.swift */; };
 		CE5B25EA201785400054C2FD /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B25E9201785400054C2FD /* String+extensions.swift */; };
@@ -39,6 +40,7 @@
 		CE1EF511201E139500E53FDE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE1EF513201E38DE00E53FDE /* UIImage+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extensions.swift"; sourceTree = "<group>"; };
 		CE1EF517201E8AAB00E53FDE /* GifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifViewController.swift; sourceTree = "<group>"; };
+		CE209E052022787800C0F1FA /* ColumnsFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnsFlowLayout.swift; sourceTree = "<group>"; };
 		CE5B25E420171A380054C2FD /* GiphyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GiphyCell.xib; sourceTree = "<group>"; };
 		CE5B25E620171A500054C2FD /* GiphyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyCell.swift; sourceTree = "<group>"; };
 		CE5B25E9201785400054C2FD /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		CE5B25EE201786490054C2FD /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				CE209E052022787800C0F1FA /* ColumnsFlowLayout.swift */,
 				CE5B25EC201785750054C2FD /* UICollectionViewCell+extensions.swift */,
 				CE1EF513201E38DE00E53FDE /* UIImage+extensions.swift */,
 			);
@@ -446,6 +449,7 @@
 				CE5B25ED201785750054C2FD /* UICollectionViewCell+extensions.swift in Sources */,
 				CEF2D7CA201EFE52000FE35C /* AppReachability.swift in Sources */,
 				CE1EF514201E38DE00E53FDE /* UIImage+extensions.swift in Sources */,
+				CE209E062022787800C0F1FA /* ColumnsFlowLayout.swift in Sources */,
 				CE5B25F320178CC60054C2FD /* GiphyList.swift in Sources */,
 				CE5B25EA201785400054C2FD /* String+extensions.swift in Sources */,
 				CE1EF50F201E11DE00E53FDE /* Array+extensions.swift in Sources */,
